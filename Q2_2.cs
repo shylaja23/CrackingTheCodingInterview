@@ -48,6 +48,7 @@ namespace Rextester
             Node curr = root.next;
             while(true)
             {
+                Console.WriteLine(curr.val);
                 if((tracker & 1<<curr.val) > 0)
                 {
                     prev.next = curr.next;
@@ -60,6 +61,8 @@ namespace Rextester
                 {
                     break;
                 }
+                prev = curr;
+                curr = curr.next;
             }
         }
         public static void PrintList(Node root)

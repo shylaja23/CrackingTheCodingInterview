@@ -7,6 +7,8 @@ in place.)
 EXAMPLE
 Input: "Mr John Smith
 Output: "Mr%20Dohn%20Smith"
+
+Solution: Use char array to loop through trimmed version of the input string and add %20 when ever a space is encountered.
 */
 
 

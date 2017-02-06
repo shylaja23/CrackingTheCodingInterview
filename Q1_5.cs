@@ -4,7 +4,7 @@ of repeated characters. For example, the string aabcccccaaa would become
 a2blc5a3. If the "compressed" string would not become smaller than the original
 string, your method should return the original string.
 
-
+Answer: Use List<char> to create output string. Do not use Dictionary to keep track of char counts, keep currCount and currChar to keep track of characters and character count in a loop. initialize the curChar with a null string. check if it is beginning of loop, initialize curChar with 1st character, other section of loop will check if count should be incremented or not, last section of the loop will take care of appending to the string builder.
 */
 
 

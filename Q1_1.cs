@@ -1,7 +1,9 @@
 /*Implement an algorithm to determine if a string has all unique characters. What
 if you cannot use additional data structures?
 
-Solution: This solution will consider small caps and capital letters as same
+Solution: This solution will consider small caps and capital letters as same.
+Question is to find if a given string is unique. and no datastructure be used in solution. 
+ this solution uses binary representation of a var datatype variable to uniquely identify each character and binary OR int value of each character to checker if it is unique. Binary AND is used to check each character with checker if the same character is repeated.
 */
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,7 @@
 /*Implement a function void reverse(char* str) in C or C++ which reverses a nullterminated
 string
+
+Solution uses for loop and a char array to reverse the string and if the length is odd number, a middle letter is added seperately , the time complexity is O(N/2) and space complexity is O(N)
 */
 using System;
 using System.Collections.Generic;

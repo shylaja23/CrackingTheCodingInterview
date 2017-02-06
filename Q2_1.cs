@@ -1,7 +1,9 @@
 /*
-Implement an algorithm to find the kth to last element of a singly linked list.
+Write code to remove duplicates from an unsorted linked list.
+FOLLOW UP
+How would you solve this problem if a temporary buffer is not allowed?
 
-SOlution: track number of elements traversed so far with tracker int and curr NOde. when kth element = tracker, create a kELe NOde and traverse nodes until curr reaches last element in linked list. this way you got the kth element from last, runner technique. 
+Solution: Use tracker integer and bitwise AND to tracker with current value , if result is  > 0 then it is a duplicate. use 2 pointers while traversing linked list, prev and curr. whenever a duplicate is encountered, prev.next = curr.next will eleminate curr from linked list.
 */
 using System;
 using System.Collections.Generic;
@@ -24,8 +26,8 @@ namespace Rextester
         public static void Main(string[] args)
         {
             Node root = CreateList();
-            FindKElement(root);
-            //PrintList(root);
+            RemoveDuplicates(root);
+            PrintList(root);
         }
         public static Node CreateList()
         {
@@ -43,25 +45,29 @@ namespace Rextester
             }
             return root;
         }
-        public static void FindKElement(Node root)
+        public static void RemoveDuplicates(Node root)
         {
-            int k = Convert.ToInt32(Console.ReadLine());
             int tracker = 0;
-            Node curr = root;
-            Node kEle = root;
+            Node prev = root;
+            Node curr = root.next;
             while(true)
             {
+                Console.WriteLine(curr.val);
+                if((tracker & 1<<curr.val) > 0)
+                {
+                    prev.next = curr.next;
+                }
+                else
+                {
+                    tracker = tracker | 1<<curr.val;
+                }
                 if(curr.next == null)
                 {
                     break;
                 }
-                if(tracker >= k)
-                    kEle = kEle.next;
+                prev = curr;
                 curr = curr.next;
-                tracker++;
             }
-            if(kEle != null)
-                Console.WriteLine(kEle.val);
         }
         public static void PrintList(Node root)
         {

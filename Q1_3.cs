@@ -1,4 +1,5 @@
 /*Given two strings, write a method to decide if one is a permutation of the other.
+Solution: loop through the longer string and compare chars of other string. if the chars mismatch the match count is reset to 0.
 */
 using System;
 using System.Collections.Generic;
